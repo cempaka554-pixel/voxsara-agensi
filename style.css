@@ -1,259 +1,722 @@
-/* Palet Warna Kopi */
-:root {
-    --espresso: #2C1E16;
-    --coffee-brown: #4A3018;
-    --latte: #A67B5B;
-    --cream: #F5F5DC;
-    --white: #FAFAFA;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VOXARA AGENCY | Kopi Dingdong</title>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-body {
-    font-family: 'Poppins', sans-serif;
-    color: var(--espresso);
-    background-color: var(--white);
-    line-height: 1.7;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-}
+  <style>
 
-/* Tipografi untuk cerita */
-p {
-    font-family: 'Lora', serif;
-    font-size: 1.1rem;
-}
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
 
-/* Navigasi / Menu Atas */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 5%;
-    background-color: rgba(250, 250, 250, 0.95);
-    backdrop-filter: blur(10px);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 999;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-}
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#f5e6d3;
+      color:#2a2a2a;
+      overflow-x:hidden;
+    }
 
-.logo {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--espresso);
-    letter-spacing: 2px;
-}
+    :root{
+      --cream:#f5e6d3;
+      --brown:#6f4e37;
+      --beige:#e8d8c4;
+      --black:#2a2a2a;
+      --orange:#d98e43;
+    }
 
-.logo span {
-    color: var(--latte);
-}
+    section{
+      padding:100px 10%;
+    }
 
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 25px;
-}
+    h1,h2,h3{
+      font-family:'Playfair Display',serif;
+    }
 
-.nav-links a {
-    text-decoration: none;
-    color: var(--coffee-brown);
-    font-weight: 600;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    position: relative;
-    transition: color 0.3s;
-}
+    /* NAVBAR */
 
-/* Motion: Hover Underline pada Menu */
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: var(--latte);
-    transition: width 0.3s ease;
-}
+    nav{
+      width:100%;
+      padding:20px 10%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:fixed;
+      top:0;
+      z-index:1000;
+      background:rgba(42,42,42,0.8);
+      backdrop-filter:blur(10px);
+    }
 
-.nav-links a:hover {
-    color: var(--latte);
-}
+    nav h2{
+      color:var(--cream);
+      font-size:28px;
+    }
 
-.nav-links a:hover::after {
-    width: 100%;
-}
+    nav ul{
+      display:flex;
+      gap:30px;
+      list-style:none;
+    }
 
-/* Home / Hero Section */
-.hero {
-    height: 100vh;
-    background: url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
+    nav ul li a{
+      color:white;
+      text-decoration:none;
+      transition:0.3s;
+      font-weight:500;
+    }
 
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(44, 30, 22, 0.7), rgba(74, 48, 24, 0.5));
-}
+    nav ul li a:hover{
+      color:var(--orange);
+    }
 
-.hero-content {
-    position: relative;
-    z-index: 1;
-    color: var(--white);
-    max-width: 800px;
-    padding: 0 20px;
-}
+    /* HERO */
 
-.subtitle {
-    font-size: 1.2rem;
-    letter-spacing: 3px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    color: var(--latte);
-    font-family: 'Poppins', sans-serif;
-}
+    .hero{
+      height:100vh;
+      background:
+      linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.5)),
+      url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1600&auto=format&fit=crop') center/cover;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:white;
+    }
 
-.hero h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
+    .hero-content{
+      animation:fadeUp 1.5s ease;
+    }
 
-.tagline {
-    font-family: 'Lora', serif;
-    font-size: 1.8rem;
-    font-style: italic;
-    margin-bottom: 40px;
-    font-weight: 400;
-}
+    .hero h1{
+      font-size:70px;
+      margin-bottom:20px;
+    }
 
-/* Button & Motion */
-.btn {
-    display: inline-block;
-    padding: 15px 35px;
-    background-color: var(--latte);
-    color: var(--white);
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: 600;
-    border: 2px solid transparent;
-    transition: all 0.4s ease;
-    cursor: pointer;
-    font-family: 'Poppins', sans-serif;
-}
+    .hero p{
+      max-width:700px;
+      margin:auto;
+      line-height:1.8;
+      margin-bottom:30px;
+      font-size:18px;
+    }
 
-.btn:hover {
-    background-color: transparent;
-    border: 2px solid var(--latte);
-    color: var(--latte);
-    transform: translateY(-5px); /* Motion: Melayang */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
+    .buttons{
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
 
-/* General Sections */
-.section {
-    padding: 100px 10%;
-}
+    .btn{
+      padding:15px 30px;
+      border:none;
+      border-radius:50px;
+      background:var(--orange);
+      color:white;
+      cursor:pointer;
+      font-weight:600;
+      transition:0.4s;
+    }
 
-.bg-light { background-color: var(--cream); }
-.bg-dark { background-color: var(--espresso); }
-.bg-texture { background-color: var(--white); }
-.text-white { color: var(--white); }
-.text-center { text-align: center; }
+    .btn:hover{
+      transform:translateY(-5px);
+      background:var(--brown);
+    }
 
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-}
+    /* SECTION TITLE */
 
-.section-title {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: inherit;
-}
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
 
-.bg-light .section-title, .bg-texture .section-title {
-    color: var(--coffee-brown);
-}
+    .section-title h2{
+      font-size:50px;
+      color:var(--brown);
+      margin-bottom:15px;
+    }
 
-/* Grid Layouts */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
-}
+    .section-title p{
+      max-width:700px;
+      margin:auto;
+      line-height:1.8;
+    }
 
-/* Menu Cards & Motion */
-.card {
-    background: var(--white);
-    padding: 40px 30px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    text-align: center;
-    border-bottom: 4px solid var(--latte);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
+    /* ABOUT */
 
-.card:hover {
-    transform: translateY(-15px); /* Motion: Melayang ke atas */
-    box-shadow: 0 15px 30px rgba(74, 48, 24, 0.15);
-}
+    .about-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:40px;
+      align-items:center;
+    }
 
-.card h3 {
-    color: var(--coffee-brown);
-    margin-bottom: 15px;
-    font-size: 1.5rem;
-}
+    .about-image img{
+      width:100%;
+      border-radius:20px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    }
 
-/* Activity Boxes */
-.activity-box {
-    background: var(--cream);
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-    transition: all 0.3s ease;
-}
+    .about-text{
+      line-height:2;
+    }
 
-.activity-box:hover {
-    background: var(--latte);
-    color: var(--white);
-}
+    .milestone{
+      margin-top:30px;
+      background:white;
+      padding:20px;
+      border-radius:15px;
+    }
 
-.activity-box:hover h3, .activity-box:hover p {
-    color: var(--white);
-}
+    .milestone h3{
+      color:var(--brown);
+      margin-bottom:10px;
+    }
 
-.activity-icon {
-    font-size: 3rem;
-    margin-bottom: 15px;
-}
+    /* BRAND VALUES */
 
-.activity-box h3 {
-    margin-bottom: 15px;
-    color: var(--espresso);
-}
+    .values{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+      margin-top:50px;
+    }
 
-footer {
-    background-color: #1a120c;
-    color: #888;
-    text-align: center;
-    padding: 25px;
-    font-size: 0.9rem;
-}
+    .value-card{
+      background:white;
+      padding:30px;
+      border-radius:20px;
+      transition:0.4s;
+      box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .value-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .value-card h3{
+      color:var(--orange);
+      margin-bottom:10px;
+    }
+
+    /* SOCIAL ISSUE */
+
+    .issues{
+      background:var(--black);
+      color:white;
+    }
+
+    .big-text{
+      text-align:center;
+      font-size:70px;
+      margin-bottom:60px;
+      color:var(--cream);
+    }
+
+    .issue-cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+    }
+
+    .issue-card{
+      background:rgba(255,255,255,0.08);
+      padding:30px;
+      border-radius:20px;
+      backdrop-filter:blur(10px);
+    }
+
+    .issue-card h3{
+      color:var(--orange);
+      margin-bottom:15px;
+    }
+
+    /* ACTIVITIES */
+
+    .campaign-box{
+      margin-top:60px;
+    }
+
+    .campaign-box h3{
+      font-size:35px;
+      color:var(--brown);
+      margin-bottom:20px;
+    }
+
+    .campaign-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .campaign-card{
+      background:white;
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:0 10px 20px rgba(0,0,0,0.08);
+      transition:0.4s;
+    }
+
+    .campaign-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .campaign-card img{
+      width:100%;
+      height:250px;
+      object-fit:cover;
+    }
+
+    .campaign-card .content{
+      padding:20px;
+    }
+
+    /* PRODUCT */
+
+    .product-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+    }
+
+    .product-card{
+      background:white;
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:0 10px 25px rgba(0,0,0,0.1);
+      transition:0.4s;
+    }
+
+    .product-card:hover{
+      transform:scale(1.03);
+    }
+
+    .product-card img{
+      width:100%;
+      height:250px;
+      object-fit:cover;
+    }
+
+    .product-info{
+      padding:20px;
+    }
+
+    .product-info h3{
+      color:var(--brown);
+      margin-bottom:10px;
+    }
+
+    .price{
+      color:var(--orange);
+      font-weight:700;
+    }
+
+    /* CONTACT */
+
+    .contact{
+      background:var(--brown);
+      color:white;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:40px;
+    }
+
+    .contact-box{
+      background:rgba(255,255,255,0.1);
+      padding:30px;
+      border-radius:20px;
+    }
+
+    .contact-box h3{
+      margin-bottom:20px;
+      color:var(--orange);
+    }
+
+    footer{
+      background:#1d1d1d;
+      color:white;
+      text-align:center;
+      padding:30px;
+    }
+
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:45px;
+      }
+
+      .big-text{
+        font-size:45px;
+      }
+
+      nav{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+  <h2>VOXARA AGENCY</h2>
+
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About Campaign</a></li>
+    <li><a href="#issues">Our Purpose</a></li>
+    <li><a href="#activities">Activities</a></li>
+    <li><a href="#product">Product</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+  <div class="hero-content">
+
+    <h1>Ngopi Bareng, Bukan Sendiri</h1>
+
+    <p>
+      VOXARA AGENCY bersama Kopi Dingdong menghadirkan campaign interaktif
+      untuk menghidupkan kembali hangatnya interaksi sosial di tengah dunia
+      yang terlalu sibuk dengan layar.
+    </p>
+
+    <div class="buttons">
+      <button class="btn">Explore Campaign</button>
+      <button class="btn">Join Event</button>
+      <button class="btn">Watch Podcast</button>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+  <div class="section-title">
+    <h2>About Kopi Dingdong</h2>
+  </div>
+
+  <div class="about-grid">
+
+    <div class="about-image">
+      <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop">
+    </div>
+
+    <div class="about-text">
+
+      <p>
+        Kopi Dingdong adalah sebuah coffee shop yang terletak di kawasan
+        Graha Raya, Tangerang. Tempat ini populer sebagai destinasi nongkrong
+        modern bagi berbagai kalangan mulai dari pelajar, anak muda,
+        hingga pekerja.
+      </p>
+
+      <div class="milestone">
+        <h3>Milestone</h3>
+
+        <p><b>2022</b> — Kopi Dingdong resmi berdiri.</p>
+        <p><b>2023</b> — Mulai dikenal luas dan aktif membangun branding.</p>
+        <p><b>2024</b> — Menghadirkan menu favorit Iced Butterscotch.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- BRAND VALUES -->
+
+  <div class="values">
+
+    <div class="value-card">
+      <h3>Kebersamaan</h3>
+      <p>Membangun hubungan dan berbagi cerita.</p>
+    </div>
+
+    <div class="value-card">
+      <h3>Interaktif</h3>
+      <p>Mendorong interaksi sosial langsung.</p>
+    </div>
+
+    <div class="value-card">
+      <h3>Nostalgia</h3>
+      <p>Membawa pelanggan pada kenangan hangat.</p>
+    </div>
+
+    <div class="value-card">
+      <h3>Kreatif & Inovatif</h3>
+      <p>Selalu menghadirkan ide dan campaign baru.</p>
+    </div>
+
+    <div class="value-card">
+      <h3>Friendly</h3>
+      <p>Suasana nyaman dan santai bagi pengunjung.</p>
+    </div>
+
+    <div class="value-card">
+      <h3>Peduli Komunitas</h3>
+      <p>Mendukung komunitas kreatif lokal.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SOCIAL ISSUES -->
+
+<section class="issues" id="issues">
+
+  <div class="big-text">
+    KENAPA CAMPAIGN INI DIBUAT?
+  </div>
+
+  <div class="issue-cards">
+
+    <div class="issue-card">
+      <h3>Terlalu Fokus Pada HP</h3>
+      <p>
+        Anak muda lebih banyak menghabiskan waktu dengan layar
+        dibanding berinteraksi secara langsung.
+      </p>
+    </div>
+
+    <div class="issue-card">
+      <h3>Nongkrong Jadi Individualis</h3>
+      <p>
+        Banyak orang nongkrong bersama tetapi sibuk dengan
+        aktivitas masing-masing.
+      </p>
+    </div>
+
+    <div class="issue-card">
+      <h3>Interaksi Berkurang</h3>
+      <p>
+        Kehangatan percakapan mulai tergantikan oleh media sosial.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ACTIVITIES -->
+
+<section id="activities">
+
+  <div class="section-title">
+    <h2>Campaign Activities</h2>
+  </div>
+
+  <!-- ONLINE -->
+
+  <div class="campaign-box">
+
+    <h3>#NgopiBarengDingdong</h3>
+
+    <div class="campaign-grid">
+
+      <div class="campaign-card">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop">
+        <div class="content">
+          <h4>Instagram Reels</h4>
+          <p>Konten aesthetic dan relatable Gen Z.</p>
+        </div>
+      </div>
+
+      <div class="campaign-card">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop">
+        <div class="content">
+          <h4>TikTok Challenge</h4>
+          <p>Challenge nongkrong tanpa sibuk HP.</p>
+        </div>
+      </div>
+
+      <div class="campaign-card">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop">
+        <div class="content">
+          <h4>UGC Challenge</h4>
+          <p>Upload momen nongkrong bareng teman.</p>
+        </div>
+      </div>
+
+      <div class="campaign-card">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop">
+        <div class="content">
+          <h4>Influencer Mahasiswa</h4>
+          <p>Kolaborasi bersama creator kampus lokal.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- OFFLINE -->
+
+  <div class="campaign-box">
+
+    <h3>No Phone Coffee Time</h3>
+
+    <div class="campaign-grid">
+
+      <div class="campaign-card">
+        <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=1200&auto=format&fit=crop">
+        <div class="content">
+          <h4>Taruh HP</h4>
+          <p>Pengunjung diajak menikmati waktu tanpa gadget.</p>
+        </div>
+      </div>
+
+      <div class="campaign-card">
+        <img src="https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?q=80&w=1200&auto=format&fit=crop">
+        <div class="content">
+          <h4>Main Uno</h4>
+          <p>Membangun interaksi dan keseruan bersama.</p>
+        </div>
+      </div>
+
+      <div class="campaign-card">
+        <img src="https://images.unsplash.com/photo-1606503153255-59d8b8b7d1b5?q=80&w=1200&auto=format&fit=crop">
+        <div class="content">
+          <h4>Board Game</h4>
+          <p>Monopoly, kartu, dan permainan interaktif.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PRODUCT -->
+
+<section id="product">
+
+  <div class="section-title">
+    <h2>Favorite Menu</h2>
+  </div>
+
+  <div class="product-grid">
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=1200&auto=format&fit=crop">
+      <div class="product-info">
+        <h3>Iced Butterscotch</h3>
+        <p class="price">Rp 28.000</p>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop">
+      <div class="product-info">
+        <h3>Caramel Latte</h3>
+        <p class="price">Rp 30.000</p>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1200&auto=format&fit=crop">
+      <div class="product-info">
+        <h3>Americano</h3>
+        <p class="price">Rp 20.000</p>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1200&auto=format&fit=crop">
+      <div class="product-info">
+        <h3>Matcha Latte</h3>
+        <p class="price">Rp 32.000</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+  <div class="section-title">
+    <h2 style="color:white;">Contact Us</h2>
+  </div>
+
+  <div class="contact-grid">
+
+    <div class="contact-box">
+      <h3>Location</h3>
+      <p>
+        Pasar Modern Graha Raya,
+        Jl. KH. Mas Mansyur,
+        Pinang, Tangerang, Banten
+      </p>
+    </div>
+
+    <div class="contact-box">
+      <h3>Phone</h3>
+      <p>081574736377</p>
+    </div>
+
+    <div class="contact-box">
+      <h3>Social Media</h3>
+      <p>Instagram : @kopidingdong</p>
+      <br>
+      <h3>VOXARA AGENCY</h3>
+      <p>Email : voxaraagency@gmail.com</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <p>
+    © 2026 VOXARA AGENCY — Campaign Partner with Kopi Dingdong Graha Raya
+  </p>
+</footer>
+
+</body>
+</html>
