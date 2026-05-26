@@ -1,0 +1,259 @@
+/* Palet Warna Kopi */
+:root {
+    --espresso: #2C1E16;
+    --coffee-brown: #4A3018;
+    --latte: #A67B5B;
+    --cream: #F5F5DC;
+    --white: #FAFAFA;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--espresso);
+    background-color: var(--white);
+    line-height: 1.7;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* Tipografi untuk cerita */
+p {
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+}
+
+/* Navigasi / Menu Atas */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: rgba(250, 250, 250, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--espresso);
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--latte);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--coffee-brown);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s;
+}
+
+/* Motion: Hover Underline pada Menu */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--latte);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--latte);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Home / Hero Section */
+.hero {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(44, 30, 22, 0.7), rgba(74, 48, 24, 0.5));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: var(--white);
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: var(--latte);
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.tagline {
+    font-family: 'Lora', serif;
+    font-size: 1.8rem;
+    font-style: italic;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+/* Button & Motion */
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: var(--latte);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    border: 2px solid transparent;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn:hover {
+    background-color: transparent;
+    border: 2px solid var(--latte);
+    color: var(--latte);
+    transform: translateY(-5px); /* Motion: Melayang */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* General Sections */
+.section {
+    padding: 100px 10%;
+}
+
+.bg-light { background-color: var(--cream); }
+.bg-dark { background-color: var(--espresso); }
+.bg-texture { background-color: var(--white); }
+.text-white { color: var(--white); }
+.text-center { text-align: center; }
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: inherit;
+}
+
+.bg-light .section-title, .bg-texture .section-title {
+    color: var(--coffee-brown);
+}
+
+/* Grid Layouts */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+/* Menu Cards & Motion */
+.card {
+    background: var(--white);
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    border-bottom: 4px solid var(--latte);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-15px); /* Motion: Melayang ke atas */
+    box-shadow: 0 15px 30px rgba(74, 48, 24, 0.15);
+}
+
+.card h3 {
+    color: var(--coffee-brown);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+/* Activity Boxes */
+.activity-box {
+    background: var(--cream);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.activity-box:hover {
+    background: var(--latte);
+    color: var(--white);
+}
+
+.activity-box:hover h3, .activity-box:hover p {
+    color: var(--white);
+}
+
+.activity-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.activity-box h3 {
+    margin-bottom: 15px;
+    color: var(--espresso);
+}
+
+footer {
+    background-color: #1a120c;
+    color: #888;
+    text-align: center;
+    padding: 25px;
+    font-size: 0.9rem;
+}
